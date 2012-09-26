@@ -18,6 +18,10 @@
 
 class controlpts
 {
+  friend controlpts operator -(controlpts &x, controlpts &y);
+  friend controlpts operator *(float x, const controlpts& y);
+  friend controlpts operator *( const controlpts& y, float x);
+
   public:
   controlpts(double a, double b, double c);
   double getX();

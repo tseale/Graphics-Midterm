@@ -19,10 +19,10 @@ ifneq "$(wildcard $(GLEW))" ""
     LIBPATH += -L$(GLEW)/lib -Wl,--rpath -Wl,$(GLEW)/lib
 endif
 
-all: hw4
+all: midterm
 
 clean:
-	rm -f *.o hw4
+	rm -f *.o midterm
 
 depend:
 	rm -f Makefile.bak
@@ -40,7 +40,7 @@ depend:
 .cpp.o: 	
 	$(CXX) $(CFLAGS) $(INCPATH) -c -o $@ $<
 
-hw4: main.o camera.o controlpts.o
+midterm: main.o camera.o controlpts.o
 	$(CXX) $(CFLAGS) $(INCPATH) -o $@ $^ $(LIBPATH) $(LIBS)
 	
 
